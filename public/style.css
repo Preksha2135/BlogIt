@@ -1,0 +1,8 @@
+body {
+  background-image: url(https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?cs=srgb&dl=pexels-souvenirpixels-414612.jpg&fm=jpg);
+  background-size: cover;
+  color: black;
+}
+.border-white {
+  border-bottom: white !important;
+}

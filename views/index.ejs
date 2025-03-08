@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogIt</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <%- include("partials/header_index_new.ejs") %>
+        <div class="container d-flex flex-column align-items-center py-3 mb-4">
+            <h1>Welcome to BlogIt</h1>
+            <p>Write a blog.</p>
+        </div>
+        <div class="container d-flex flex-column align-items-center py-4">
+            <% if (blogs.length> 0) { %>
+                <% blogs.forEach(blog=> { %>
+                    <div class="card w-100 shadow py-3 mb-4 mx-auto">
+
+                        <div class="card-body">
+                            <!-- Blog title links to the individual blog page -->
+                            <h3>
+                                <a href="/blog/<%= blog.id %>" class="text-decoration-none">
+                                    <%= blog.title %>
+                                </a>
+                            </h3>
+                            <p>
+                                <%= blog.body.substring(0, 100) %>...
+                            </p> <!-- Show preview -->
+                        </div>
+                    </div>
+                    <% });} %>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>
